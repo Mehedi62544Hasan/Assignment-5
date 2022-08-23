@@ -3,13 +3,13 @@ body{
 }
 
 .comment{
-    padding: 0 300px;
+    padding: 0 320px;
     font-style: italic;
     margin-top: 30px;
 }
 
 #comment{
-    color: gold;
+    color: rgb(226, 221, 184);
 }
 
 .font-header{
@@ -52,7 +52,7 @@ body{
 }
 
 .card-text{
-    font-weight: 200;
+    font-weight: 100;
 }
 
 #calculateTotal-btn{
@@ -62,8 +62,8 @@ body{
 .select-btn:hover{
     background-color: cornflowerblue;
     color: #000000;
-    transition: 0.5s;
-    padding: 10px 110px;
+    transition: 0.75s ease-out;
+    padding: 10px 100px;
 }
 
 .sub-title{
@@ -71,6 +71,7 @@ body{
     font-size: 30px;
     font-weight: 400;
     margin-top: 8px;
+    
 }
 
 .background{
@@ -134,6 +135,7 @@ hr{
     color: white;
 }
 .footer-container{
-    padding-top: 50px;
+    padding-top: 0px;
+    margin-top: 80px;
 }
 
