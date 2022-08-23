@@ -1,73 +1,100 @@
-
-const clickButton = document.getElementsByClassName('select-btn');
-for(let button of clickButton){
-    button.addEventListener('click', function(event){
-        const playersName = event.target.parentNode.children[0].innerText;
-        const buttonDisabled = event.target.parentNode.children[2];
+<main>  
+<div class="container text-center  my-5">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="images/Rectangle 144 (2).png" class="card-img-top" alt="...">
+            <div class="card-body bg-black text-light">
+              <h4 class="card-title">Lionel Messi</h4>
+              <p class="card-text">55 Goals . 100 Assist</p>
+              <button class="select-btn">SELECT</button>
+            </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="images/Rectangle 144 (1).png" class="card-img-top" alt="...">
+            <div class="card-body bg-black text-light">
+              <h4 class="card-title">Neymar Jr</h4>
+              <p class="card-text">40 Goals . 90 Assist</p>
+              <button class="select-btn">SELECT</button>
+            </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="images/Rectangle 144.png" class="card-img-top" alt="...">
+            <div class="card-body bg-black text-light">
+              <h4 class="card-title">Kylian Mbappé</h4>
+              <p class="card-text">30 Goals . 85 Assist</p>
+              <button class="select-btn">SELECT</button>
+            </div>
+          </div>
+      </div>
+      <div class="col background text-light">
+        <h4 class="text-light sub-title">Selected - 5</h4>
         
-        const olContainer = document.getElementById('ol-container');
-        const li = document.createElement('li');
-        li.innerText = playersName;
-        // const olContainers = document.getElementsByTagName('li').length`
-        const olContainers = document.querySelector('#ol-container');
-        // console.log(olContainers.children.length)
-        const item = olContainers.children.length;
-        if(item >='5'){
-            alert('Sufficient quentity selected')
-            return;
-        }
-        olContainer.appendChild(li)
-        buttonDisabled.setAttribute('disabled', '')
-    })
-}
 
-// Function for field value
-function getFieldValueById(elementId){
-    const elements =document.getElementById(elementId);
-    const elementString = elements.value;
-    const elementValue = parseFloat(elementString);
-    return elementValue;
-}
 
-// Function for text value
-function getTextValueById(elementId){
-    const element = document.getElementById(elementId);
-    const elementString = element.innerText;
-    const elementValue = parseFloat(elementString);
-    return elementValue;
-}
-// Set element value
-function setElementValue(elementId, value){
-    const element = document.getElementById(elementId);
-    element.innerText = value;
-}
+        <ol id="ol-container" class="text-start fs-5">
 
-// Calculate button
-document.getElementById('calculate-btn').addEventListener('click', function(){
-        const playerFild = getFieldValueById('PerPlayer-field')
-        const playerQuentity = playerFild * 5;
-        if(isNaN(playerFild)){
-            alert('Invalid Input')
-            return;
-        }
-        setElementValue('expense-text', playerQuentity)
-})
 
-// Calcutate Total Button
-document.getElementById('calculateTotal-btn').addEventListener('click', function(){
-    const managerValue = getFieldValueById('maneger-field');
-    const  feeMony = getFieldValueById('couch-field');
-    const playerQuentityValue = getTextValueById('expense-text');
-    const totalPayMony = playerQuentityValue + managerValue +  feeMony;
-    if(isNaN(managerValue)){
-        alert('Invalid Input')
-        return;
-    }
-    else if(isNaN( feeMony)){
-        alert('Invalid Input')
-        return;
-    }
+        </ol>
+      </div>
+    </div>
+
+
+
+    <div class="row mt-5">
+         <div class="col">
+          <div class="card" style="width: 18rem;">
+              <img src="images/Rectangle 144 (3).png" class="card-img-top" alt="...">
+              <div class="card-body bg-black text-light">
+                <h4 class="card-title">Mesut Ozil</h4>
+                <p class="card-text">35 Goals . 92 Assist</p>
+                <button class="select-btn">SELECT</button>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+              <img src="images/Rectangle 144 (4).png" class="card-img-top" alt="...">
+              <div class="card-body bg-black text-light">
+                <h4 class="card-title">Mohammed Salah</h4>
+                <p class="card-text">25 Goals . 75 Assist</p>
+                <button class="select-btn">SELECT</button>
+              </div>
+            </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+              <img src="images/Rectangle 144 (5).png" class="card-img-top" alt="...">
+              <div class="card-body bg-black text-light">
+                <h4 class="card-title">Karim Benzema</h4>
+                <p class="card-text">35 Goals   .   95 Assist</p>
+                <button class="select-btn">SELECT</button>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="col background">
+            <h3 class="text-light mb-3 sub-title ">Budget</h3>
+            <P class="text">Per Player:  <input id="PerPlayer-field"  type="text" name="" class="field"></P>
+            <button id="calculate-btn" class=" cal-btn">Calculate</button>
+            <div class="parent mt-3">
+                <p id="player-expense" class="text">Player Expenses:-</p>
+                <p class="final text last-sum">$<span id="expense-text">0</span></p>
+            </div>
+            <P class="text">Maneger:  <input id="maneger-field"  type="text" name="" class="field"></P>
+            <P class="text">Couch:  <input  id="couch-field"  type="text" name="" class="field"></P>
+            <button id="calculateTotal-btn" class=" cal-btn">Calculate Total</button>
+            <div class="parent mt-3">
+                <p id="player-expense" class="text">Total:</p>
+                <p id="final" class="text final">$<span id="total-text">0</span></p>
+            </div>
+        </div>
+    </div>
+
     
-    setElementValue('total-text', totalPayMony)
-
-})
+</main>
