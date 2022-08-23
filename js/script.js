@@ -8,12 +8,11 @@ for(let button of clickButton){
         const olContainer = document.getElementById('ol-container');
         const li = document.createElement('li');
         li.innerText = playersName;
-        // const olContainers = document.getElementsByTagName('li').length`
+
         const olContainers = document.querySelector('#ol-container');
-        // console.log(olContainers.children.length)
         const item = olContainers.children.length;
         if(item >='5'){
-            alert('Sufficient quentity selected')
+            alert('Enough Quantity')
             return;
         }
         olContainer.appendChild(li)
@@ -45,9 +44,11 @@ function setElementValue(elementId, value){
 // Calculate button
 document.getElementById('calculate-btn').addEventListener('click', function(){
         const playerFild = getFieldValueById('PerPlayer-field')
-        const playerQuentity = playerFild * 5;
+        const olContainers = document.querySelector('#ol-container');
+        const item = olContainers.children.length;
+        const playerQuentity = playerFild * item;
         if(isNaN(playerFild)){
-            alert('Invalid Input')
+            alert('Please Enter Number')
             return;
         }
         setElementValue('expense-text', playerQuentity)
